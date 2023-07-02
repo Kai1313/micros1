@@ -44,7 +44,7 @@ def get_data():
     connection.close()
 
     # Convert the data to a list of dictionaries
-    data = [{'id': row[0], 'file': row[4], 'batch': row[3], 'sequence': row[5], 'workorder': row[13]} for row in rows]
+    data = [{'internalId': row[0], 'file': row[4], 'batch': row[3], 'sequence': row[5], 'workorder': row[13]} for row in rows]
 
     # Return the data as JSON response
     return jsonify(data)
@@ -77,7 +77,7 @@ def show_data():
     count = len(rows)
 
     # Return the count as JSON response
-    return jsonify({'message': 'remaining available data', 'count': count})
+    return jsonify({'message': 'Data Available', 'count': count})
 
 if __name__ == '__main__':
     app.run()

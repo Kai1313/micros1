@@ -29,6 +29,10 @@ const TFile = db.define('t_file', {
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  flag: {
+    type: DataTypes.CHAR(1),
+    defaultValue: '0'
+  },
 });
 
 module.exports = TFile;
